@@ -1,0 +1,22 @@
+{
+  "name": "nose-express-crud",
+  "version": "1.0.0",
+  "description": "CRUD with express & mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": " start src/index.js",
+    "dev":"nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JD",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
