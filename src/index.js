@@ -20,7 +20,7 @@ const app = express();
 // Settings
 app.set("port", process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views')); //indica la ruta de la carpeta views
-app.set('view enigne', 'ejs');
+app.set('view engine', 'ejs');
 
 // Middlewares
 app.use(morgan('dev'));
