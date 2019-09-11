@@ -8,7 +8,7 @@
             <div class="card-body">
                 <form action="/add" method="POST"> <!-- method="" indica el metodo de comunicación con el server -->
                     <div class="form-group">
-                        <input type="text" name="titulo" value="" placeholder="Insert a title" class="form-control">
+                        <input type="text" name="title" placeholder="Insert a title" class="form-control">
                     </div>
                     <div class="form-group">
                         <textarea name="description" id="" cols="80" rows="" class="form-control"
@@ -38,7 +38,17 @@
                 </head>
                 <!-- Cuerpo o contenido de la tabla -->
                 <body>
+                    <!-- por cada tarea que recorra -->
+                    <% for(let i = 0; i < tasks.length; i++) {%>
+                        <!-- Se agregaran como columnas segun el td corresponda -->
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= tasks[i].title %></td>
+                                <td><%= tasks[i].description %></td>
+                                
 
+                            </tr>
+                    <% } %>
                 </body>
             </table>
         </div>
