@@ -1,10 +1,50 @@
 <% include partials/header %>
 
-    <nav class="navbar navbar-dark bg-dark mb-4">
-        <a href="/" class="navbar-brand">CRUD NODE MONGO</a>
-    </nav>
-    <div class="container">
-        <h1>Hello world</h1>
+<div class="container">
+    <div class="row">
+        <!-- FORM -->
+        <div class="col-md-5"></div>
+        <div class="card">
+            <div class="card-body">
+                <form action="/add" method="POST"> <!-- method="" indica el metodo de comunicación con el server -->
+                    <div class="form-group">
+                        <input type="text" name="titulo" value="" placeholder="Insert a title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" id="" cols="80" rows="" class="form-control"
+                            placeholder=" Insert a description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Add
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- LIST -->
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <!-- Cabecera de la tabla -->
+
+                <head>
+                    <!-- tr es una fila -->
+                    <tr>
+                        <!-- cabeceras de la tabla -->
+                        <th>N°</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Operation</th>
+                    </tr>
+                </head>
+                <!-- Cuerpo o contenido de la tabla -->
+                <body>
+
+                </body>
+            </table>
+        </div>
+
     </div>
+
+</div>
 
 <% include partials/footer %>
