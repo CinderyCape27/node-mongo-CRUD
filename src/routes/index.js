@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
         tasks //con este objeto podremos ver las tareas en el index
     })
 })
+router.get('/contact', (req, res) => {
+    res.render('contact')
+})
 
 router.post('/add', async (req, res) => {
     
