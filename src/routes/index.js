@@ -7,7 +7,7 @@ const Task = require('../models/task');
 router.get('/', async (req, res) => {
     // De la db traerá los datos guardados
     const tasks = await Task.find();
-    console.log(tasks);
+    // console.log(tasks);
     
     res.render('index', {
         tasks //con este objeto podremos ver las tareas en el index
@@ -26,6 +26,22 @@ router.post('/add', async (req, res) => {
 
     res.render('add')
 })
+router.get('/turn/:id', async (req, res) => {
+    const { id } = req.params;
+     const task = await Task.findById(id);
+     task.status = !task.status;
+     await task.save()
+     res.redirect('/');
+     
+})
+// :id indica que se escribirá alguna variable
+router.get('/delete/:id',  async (req, res) => {
+    // Params sirve para ver los parámetros de endpoint dinamico de la ruta
+    const { id } = req.params; 
+     await Task.remove({_id:id});
 
+    res.redirect('/');
+    
+})
 
 module.exports = router;
